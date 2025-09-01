@@ -8,18 +8,20 @@ import { access } from 'fs'
 
 const IDL = require("../target/idl/voting.json")
 
-const votingAddress = new PublicKey("FqzkXZdwYjurnUKetJCAvaUw5WAqbwzU6gZEwydeEfqS");
+const votingAddress = new PublicKey("E5VCLHNcqe8st2xXqWnVus49zGPTQVkLqqwd4JMjoFFN");
 
 describe('Voting', () => {
 
   let context;
   let provider;
-  let votingProgram;
+  anchor.setProvider(anchor.AnchorProvider.env());
+  provider = anchor.getProvider();
+  let votingProgram = anchor.workspace.Voting as Program<Voting>;
 
   beforeAll(async() => {
-    context = await startAnchor("", [{ name: "voting", programId: votingAddress }], []);
-    provider = new BankrunProvider(context);
-    votingProgram = new Program<Voting>(IDL, provider);
+    // context = await startAnchor("", [{ name: "voting", programId: votingAddress }], []);
+    // provider = new BankrunProvider(context);
+    // votingProgram = new Program<Voting>(IDL, provider);
   })
 
 
