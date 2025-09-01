@@ -1,63 +1,63 @@
-# voting-dapp
+# Voting DApp
 
-This is a Next.js app containing:
+Voting DApp is a decentralized application built with Next.js and Solana, allowing users to participate in on-chain voting. The project leverages Tailwind CSS for styling, Solana's web3.js for wallet interactions, and Anchor for smart contract development.
 
-- Tailwind CSS setup for styling
-- Useful wallet UI elements setup using [@solana/web3.js](https://www.npmjs.com/package/@solana/web3.js)
-- A basic Counter Solana program written in Anchor
-- UI components for interacting with the Counter program
+## Features
+
+- **On-chain Voting:** Secure, transparent voting powered by Solana smart contracts.
+- **Wallet Integration:** Connect and interact with your Solana wallet.
+- **Modern UI:** Responsive design using Tailwind CSS.
+- **Anchor-based Program:** Voting logic implemented in Rust with Anchor.
 
 ## Getting Started
 
+### Prerequisites
+
+- Node.js & pnpm installed
+- Solana CLI tools
+- Anchor CLI
+
 ### Installation
 
-#### Download the template
+Clone the repository and install dependencies:
 
 ```shell
-pnpm create solana-dapp@latest -t gh:solana-foundation/templates/web3js/voting-dapp
-```
-
-#### Install Dependencies
-
-```shell
+git clone <your-repo-url>
+cd voting-dapp
 pnpm install
 ```
 
-## Apps
+### Running the App
 
-### anchor
-
-This is a Solana program written in Rust using the Anchor framework.
-
-#### Commands
-
-You can use any normal anchor commands. Either move to the `anchor` directory and run the `anchor` command or prefix the
-command with `pnpm`, eg: `pnpm anchor`.
-
-#### Sync the program id:
-
-Running this command will create a new keypair in the `anchor/target/deploy` directory and save the address to the
-Anchor config file and update the `declare_id!` macro in the `./src/lib.rs` file of the program.
-
-You will manually need to update the constant in `anchor/lib/counter-exports.ts` to match the new program id.
+Start the web application:
 
 ```shell
-pnpm anchor keys sync
+pnpm dev
 ```
 
-#### Build the program:
+Build for production:
+
+```shell
+pnpm build
+```
+
+### Solana Program (Anchor)
+
+Navigate to the `anchor` directory to build, test, and deploy the voting smart contract.
+
+#### Build the Program
 
 ```shell
 pnpm anchor-build
 ```
 
-#### Start the test validator with the program deployed:
+#### Start Local Validator
 
 ```shell
 pnpm anchor-localnet
 ```
 
-#### Run the tests
+#### Run Tests
 
 ```shell
 pnpm anchor-test
@@ -69,21 +69,12 @@ pnpm anchor-test
 pnpm anchor deploy --provider.cluster devnet
 ```
 
-### web
+## Project Structure
 
-This is a React app that uses the Anchor generated client to interact with the Solana program.
+- `web/` — Frontend React app
+- `anchor/` — Solana smart contract (Rust/Anchor)
+- `counter-exports.ts` — Program ID and client exports
 
-#### Commands
+## Contributing
 
-Start the web app
-
-```shell
-pnpm dev
-```
-
-Build the web app
-
-```shell
-pnpm build
-```
-# voting-app
+Feel free to open issues or submit pull requests for improvements and new features.

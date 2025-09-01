@@ -1,0 +1,1 @@
+/home/luonguy/Documents/Side_Project/Voting_app/voting-dapp/anchor/target/sbpf-solana-solana/release/voting.so: /home/luonguy/Documents/Side_Project/Voting_app/voting-dapp/anchor/programs/counter/src/lib.rs
